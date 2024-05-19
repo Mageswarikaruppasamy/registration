@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename="bootstrap.min.css")}}">
+    <script src="{{url_for('static',filename="jquery.min.js")}}"></script>
+    <style>
+        .box{
+            padding-top: 30px;
+            padding-bottom: 30px;
+            border:1px solid white;
+            width: 430px;
+        }
+        #name{
+            float: inline-end;
+            padding-inline-end: 10px;
+            margin-right: 30px;
+        }
+        #password{
+            float: inline-end;
+            padding-inline-end: 10px;
+            margin-right: 30px;
+        }
+        #login{
+            float: inline-end;
+            padding-inline-end: 10px;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <h2 style="margin-top: 50px;">LogIn Form</h2><br>
+            <div class="box">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category,message in messages %}
+                        <div class="alert alert-{{category}}">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            <form method='POST' action='/login' autocomplete="off">
+                <label for="name">Name :</label>
+                <input type="text" name="name" id="name" size=30><br><br><br>
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password" size=30><br><br><br>
+                <input type="submit" value="LOGIN" id="login" class="btn btn-primary">
+            </form>
+            </div>
+        </center>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.alert').fadeOut(2000);
+        })
+    </script>
+</body>
+</html>

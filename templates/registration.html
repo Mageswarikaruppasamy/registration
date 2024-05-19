@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{{url_for('static',filename="bootstrap.min.css")}}">
+    <style>
+        .box{
+            padding-top: 30px;
+            padding-bottom: 30px;
+            border:1px solid white;
+            width: 430px;
+        }
+        #name{
+            float: inline-end;
+            padding-inline-end: 10px;
+            margin-right: 30px;
+        }
+        #phone{
+            float: inline-end;
+            padding-inline-end: 10px;
+            margin-right: 30px;
+        }
+        #mail{
+            float: inline-end;
+            padding-inline-end: 10px;
+            margin-right: 30px;
+        }
+        #password{
+            float: inline-end;
+            padding-inline-end: 10px;
+            margin-right: 30px;
+        }
+        #signup{
+            float: inline-end;
+            padding-inline-end: 10px;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <h2 style="margin-top: 50px;">Registration Form</h2><br>
+            <div class="box">
+            <form action="/" method="POST" autocomplete="off">
+                <label for="name">Name  :</label>
+                <input type="text" name="name" id="name" size=30 required><br><br><br>
+                <label for="phone">Phone :</label>
+                <input type="text" name="phone" id="phone" size=30><br><br><br>
+                <label for="mail">Mail-Id  :</label>
+                <input type="email" name="mail" id="mail" required size=30><br><br><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required size=30><br><br><br>
+                <input type="submit" value="SIGNUP" class="btn btn-success" id="signup">
+            </form>
+            </div>
+        </center>
+    </div>
+</body>
+</html>
